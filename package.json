@@ -16,6 +16,6 @@
     "react-native": "0.72.0"
   },
   "devDependencies": {
-    "eas-cli": "^2.12.0"
+    "eas-cli": "latest"
   }
 }
