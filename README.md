@@ -42,3 +42,40 @@ eas build --platform android
 ## Next steps
 - If you have existing code to integrate, upload or point me to it and I will incorporate it.
 - I can add navigation, screens, types (TypeScript), linting, and CI if you want.
+
+## Backend API
+
+The project now includes a simple Node.js Express backend that serves sample data.
+
+### Start the backend server
+
+```bash
+npm run server
+```
+
+The server will start on **http://localhost:3001** (or the port defined in the `PORT` environment variable).
+
+### Available endpoints
+
+| Method | Path        | Description                              |
+|--------|-------------|------------------------------------------|
+| GET    | `/api/data` | Returns a JSON payload with sample data. |
+| GET    | `/health`   | Health‑check endpoint – returns `OK`.    |
+
+#### Example response from `/api/data`
+
+```json
+{
+  "status": "success",
+  "timestamp": "2025-10-28T02:50:00.000Z",
+  "data": [
+    { "id": 1, "name": "Broadband Plan", "speed": "100Mbps", "price": 49.99 },
+    { "id": 2, "name": "Cable TV Package", "channels": 150, "price": 39.99 },
+    { "id": 3, "name": "Phone Service", "minutes": 500, "price": 19.99 }
+  ]
+}
+```
+
+You can integrate this endpoint with the React Native app or any other client by sending a GET request to the URL above.
+
+---
